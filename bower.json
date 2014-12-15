@@ -1,8 +1,8 @@
 {
-  "name": "polymer-base",
+  "name": "pocket-4d",
   "version": "0.0.0",
   "keywords": "seed, polymer, web-components",
-  "main": "polymer-base.html",
+  "main": "pocket-4d.html",
   "dependencies": {
     "polymer": "Polymer/polymer#~0.5.2"
   }
