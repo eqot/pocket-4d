@@ -1,7 +1,7 @@
 {
-  "name": "polymer-base",
+  "name": "pocket-4d",
   "version": "0.0.0",
-  "description": "polymer-base",
+  "description": "pocket-4d",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
