@@ -7,12 +7,32 @@
   <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
   <link rel="import" href="pocket-4d.html">
 
+  <script>
+    function init() {
+      button = document.querySelector('button');
+      button.addEventListener('click', test1);
+    }
+
+    function test1() {
+      element = document.querySelector('pocket-4d');
+      element.setPosition(100, 100);
+    }
+
+    window.onload = init;
+  </script>
+
 </head>
 <body unresolved>
 
+  <button>
+    Test 1
+  </button>
+
   <p>An `pocket-4d` looks like this:</p>
 
-  <pocket-4d></pocket-4d>
+  <pocket-4d>
+    <iframe src="http://localhost:3001/feedbacks/new?v=part" frameborder='0'></iframe>
+  </pocket-4d>
 
 </body>
 </html>
