@@ -57,13 +57,16 @@ gulp.task 'symlink', ->
   gulp.src name + '.html'
     .pipe $.symlink('.tmp/' + name + '/' + name + '.html')
 
-  return gulp.src '../polymer'
-    .pipe $.symlink('.tmp/')
+  return gulp.src '../bower_components/polymer/'
+    .pipe $.symlink('.tmp/bower_components/polymer')
 
-gulp.task 'build', ['scripts', 'styles', 'symlink'], ->
+gulp.task 'compile', ['scripts', 'styles', 'symlink'], ->
   return gulp.src '.tmp/' + name + '/' + name + '.html'
     .pipe $.vulcanize({dest: 'dist', inline: true})
     .pipe gulp.dest('dist')
+
+gulp.task 'build', ['clean'], ->
+  gulp.start 'compile'
 
 gulp.task 'default', ['clean'], ->
   gulp.start 'watch'
