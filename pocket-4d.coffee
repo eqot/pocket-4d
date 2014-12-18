@@ -19,8 +19,8 @@ Polymer 'pocket-4d',
 
   x: 100
   y: 100
-  w: 100
-  h: 100
+  w: 500
+  h: 500
   alignX: 'right'
   alignY: 'top'
 
