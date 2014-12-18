@@ -11,9 +11,36 @@
 
   transition: all 0.5s;
 
+  &(.dragging) {
+    transition: all 0;
+
+    cursor: move;
+
+    #cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
   opacity: 0;
 
   &(.open) {
     opacity: 1;
+  }
+}
+
+#header {
+  width: 100%;
+  height: 20px;
+
+  background-color: #888;
+
+  &:hover {
+    cursor: move;
   }
 }
