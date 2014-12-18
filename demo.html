@@ -19,23 +19,7 @@
     }
 
     function test1() {
-      if (openedFlag) {
-        close();
-      } else {
-        open();
-      }
-
-      openedFlag = !openedFlag;
-    }
-
-    function open() {
-      element.setPosition(100, 100);
-      element.setSize(500, 500);
-    }
-
-    function close() {
-      element.setPosition(0, 0);
-      element.setSize(0, 0);
+      element.toggle();
     }
 
     window.onload = init;
