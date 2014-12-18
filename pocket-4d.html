@@ -12,14 +12,19 @@ Element providing solution to no problem in particular.
 @status alpha
 @homepage http://eqot.github.io/pocket-4d
 -->
-<polymer-element name="pocket-4d" attributes="notitle">
+<polymer-element name="pocket-4d" attributes="x y w h alignX alignY">
 
   <template>
 
     <link rel="stylesheet" href="pocket-4d.css" />
 
-    <div>
+    <div id="backcover"></div>
+    <div id="dialog">
+      <div id="header"></div>
+
       <content></content>
+
+      <div id="cover"></div>
     </div>
 
   </template>

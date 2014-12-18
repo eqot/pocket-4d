@@ -1,12 +1,20 @@
 :host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+
+  &(.open) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#dialog {
   display: block;
 
   position: absolute;
-  top: 0px;
-  left: 0px;
-
-  width: 0px;
-  height: 0px;
 
   overflow: hidden;
 
@@ -15,4 +23,55 @@
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 
   transition: all 0.5s;
+
+  opacity: 0;
+
+  :host(.open) & {
+    opacity: 1;
+  }
+
+  &.dragging {
+    transition: all 0s;
+
+    cursor: move;
+
+    #cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+#header {
+  width: 100%;
+  height: 20px;
+
+  background-color: #aaa;
+
+  &:hover {
+    cursor: move;
+  }
+}
+
+#backcover {
+  transition: opacity 1s;
+
+  opacity: 0;
+
+  :host(.open) & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    opacity: 1;
+  }
 }

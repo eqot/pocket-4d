@@ -19,23 +19,7 @@
     }
 
     function test1() {
-      if (openedFlag) {
-        close();
-      } else {
-        open();
-      }
-
-      openedFlag = !openedFlag;
-    }
-
-    function open() {
-      element.setPosition(100, 100);
-      element.setSize(500, 500);
-    }
-
-    function close() {
-      element.setPosition(0, 0);
-      element.setSize(0, 0);
+      element.toggle();
     }
 
     window.onload = init;
@@ -50,7 +34,7 @@
     Test 1
   </button>
 
-  <pocket-4d>
+  <pocket-4d x="100" y="100" w="500" h="500">
     <iframe src="http://localhost:3001/feedbacks/new?v=part" frameborder='0'></iframe>
   </pocket-4d>
 
