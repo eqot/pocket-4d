@@ -40,6 +40,8 @@ Polymer 'pocket-4d',
     @state = State.OPEN
 
     @.classList.add 'open'
+    @.$.dialog.classList.add 'open'
+    @.$.backcover.classList.add 'open'
 
     @enableMouseEvent()
 
@@ -50,6 +52,8 @@ Polymer 'pocket-4d',
     @state = State.CLOSED
 
     @.classList.remove 'open'
+    @.$.dialog.classList.remove 'open'
+    @.$.backcover.classList.remove 'open'
 
     @disableMouseEvent()
 
@@ -60,12 +64,12 @@ Polymer 'pocket-4d',
       @close()
 
   setPosition: (x, y) ->
-    @.style[@alignX] = x + 'px'
-    @.style[@alignY] = y + 'px'
+    @.$.dialog.style[@alignX] = x + 'px'
+    @.$.dialog.style[@alignY] = y + 'px'
 
   setSize: (width, height) ->
-    @.style.width = width + 'px'
-    @.style.height = height + 'px'
+    @.$.dialog.style.width = width + 'px'
+    @.$.dialog.style.height = height + 'px'
 
     @child.style.width = (width - 2) + 'px'
     @child.style.height = (height - 2) + 'px'
@@ -86,7 +90,7 @@ Polymer 'pocket-4d',
     @mouseX = event.clientX + @dx
     @mouseY = event.clientY + @dy
 
-    @.classList.add 'dragging'
+    @.$.dialog.classList.add 'dragging'
 
     event.preventDefault()
     event.stopPropagation()
@@ -115,7 +119,7 @@ Polymer 'pocket-4d',
     @dx = @mouseX - event.clientX
     @dy = @mouseY - event.clientY
 
-    @.classList.remove 'dragging'
+    @.$.dialog.classList.remove 'dragging'
 
     event.preventDefault()
     event.stopPropagation()
