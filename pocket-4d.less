@@ -43,7 +43,7 @@
 
   opacity: 0;
 
-  &.open {
+  :host(.open) & {
     opacity: 1;
   }
 }
@@ -52,7 +52,7 @@
   width: 100%;
   height: 20px;
 
-  background-color: #888;
+  background-color: #aaa;
 
   &:hover {
     cursor: move;
@@ -64,7 +64,7 @@
 
   opacity: 0;
 
-  &.open {
+  :host(.open) & {
     position: absolute;
     top: 0;
     left: 0;

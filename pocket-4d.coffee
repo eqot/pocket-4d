@@ -40,8 +40,6 @@ Polymer 'pocket-4d',
     @state = State.OPEN
 
     @.classList.add 'open'
-    @.$.dialog.classList.add 'open'
-    @.$.backcover.classList.add 'open'
 
     @enableMouseEvent()
 
@@ -52,8 +50,6 @@ Polymer 'pocket-4d',
     @state = State.CLOSED
 
     @.classList.remove 'open'
-    @.$.dialog.classList.remove 'open'
-    @.$.backcover.classList.remove 'open'
 
     @disableMouseEvent()
 
