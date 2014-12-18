@@ -15,6 +15,8 @@ Polymer 'pocket-4d',
   ready: ->
     @child = @.children[0]
 
+    @close()
+
   open: ->
     @setPosition @x, @y
     @setSize @w, @h
@@ -34,7 +36,7 @@ Polymer 'pocket-4d',
       @close()
 
   setPosition: (x, y) ->
-    @.style.left = x + 'px'
+    @.style.right = x + 'px'
     @.style.top = y + 'px'
 
   setSize: (width, height) ->
