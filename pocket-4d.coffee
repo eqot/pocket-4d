@@ -25,11 +25,15 @@ Polymer 'pocket-4d',
 
     @state = State.OPEN
 
+    @.classList.add 'open'
+
   close: ->
     @setPosition 0, 0
     @setSize 0, 0
 
     @state = State.CLOSED
+
+    @.classList.remove 'open'
 
   toggle: ->
     if @state is State.CLOSED
