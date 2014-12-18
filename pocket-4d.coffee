@@ -83,8 +83,8 @@ Polymer 'pocket-4d',
   onMouseDown: (event) ->
     @mouseState = MouseState.PRESSED
 
-    @mouseX = event.x + @dx
-    @mouseY = event.y + @dy
+    @mouseX = event.clientX + @dx
+    @mouseY = event.clientY + @dy
 
     @.classList.add 'dragging'
 
@@ -95,8 +95,8 @@ Polymer 'pocket-4d',
     if @mouseState is MouseState.RELEASED
       return
 
-    dx = @mouseX - event.x
-    dy = @mouseY - event.y
+    dx = @mouseX - event.clientX
+    dy = @mouseY - event.clientY
 
     dx *= -1 if @alignX is 'left'
     dy *= -1 if @alignY is 'top'
@@ -112,8 +112,8 @@ Polymer 'pocket-4d',
 
     @mouseState = MouseState.RELEASED
 
-    @dx = @mouseX - event.x
-    @dy = @mouseY - event.y
+    @dx = @mouseX - event.clientX
+    @dy = @mouseY - event.clientY
 
     @.classList.remove 'dragging'
 
