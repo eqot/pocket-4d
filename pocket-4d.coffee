@@ -1,31 +1,29 @@
-Polymer 'pocket-4d',
+State =
+  CLOSED: 0
+  OPEN: 1
 
-  State:
-    CLOSED: 0
-    OPEN: 1
-  state: null
+Polymer 'pocket-4d',
+  state: State.CLOSED
 
   child: null
 
   ready: ->
-    @state = @State.CLOSED
-
     @child = @.children[0]
 
   open: ->
     @setPosition 100, 100
     @setSize 500, 500
 
-    @state = @State.OPEN
+    @state = State.OPEN
 
   close: ->
     @setPosition 0, 0
     @setSize 0, 0
 
-    @state = @State.CLOSED
+    @state = State.CLOSED
 
   toggle: ->
-    if @state is @State.CLOSED
+    if @state is State.CLOSED
       @open()
     else
       @close()
