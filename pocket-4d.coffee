@@ -1,9 +1,34 @@
 Polymer 'pocket-4d',
 
+  State:
+    CLOSED: 0
+    OPEN: 1
+  state: null
+
   child: null
 
   ready: ->
+    @state = @State.CLOSED
+
     @child = @.children[0];
+
+  open: ->
+    @setPosition 100, 100
+    @setSize 500, 500
+
+    @state = @State.OPEN
+
+  close: ->
+    @setPosition 0, 0
+    @setSize 0, 0
+
+    @state = @State.CLOSED
+
+  toggle: ->
+    if @state is @State.CLOSED
+      @open()
+    else
+      @close()
 
   setPosition: (x, y) ->
     @.style.left = x + 'px';
