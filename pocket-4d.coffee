@@ -7,12 +7,17 @@ Polymer 'pocket-4d',
 
   child: null
 
+  x: 100
+  y: 100
+  w: 100
+  h: 100
+
   ready: ->
     @child = @.children[0]
 
   open: ->
-    @setPosition 100, 100
-    @setSize 500, 500
+    @setPosition @x, @y
+    @setSize @w, @h
 
     @state = State.OPEN
 
