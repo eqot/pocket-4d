@@ -32,6 +32,12 @@ Polymer 'pocket-4d',
     @onMouseDown = @onMouseDown.bind(@)
     @onMouseMove = @onMouseMove.bind(@)
     @onMouseUp = @onMouseUp.bind(@)
+    @onKeyDown = @onKeyDown.bind(@)
+
+  append: (child) ->
+    @appendChild child
+
+    @child = @.children[0]
 
   open: ->
     @setPosition @x, @y
@@ -67,18 +73,21 @@ Polymer 'pocket-4d',
     @.$.dialog.style.width = width + 'px'
     @.$.dialog.style.height = height + 'px'
 
-    @child.style.width = (width - 2) + 'px'
-    @child.style.height = (height - 2) + 'px'
+    if @child?
+      @child.style.width = (width - 2) + 'px'
+      @child.style.height = (height - 2) + 'px'
 
   enableMouseEvent: ->
     @.$.header.addEventListener 'mousedown', @onMouseDown, true
     document.addEventListener 'mousemove', @onMouseMove, true
     document.addEventListener 'mouseup', @onMouseUp, true
+    document.addEventListener 'keydown', @onKeyDown, true
 
   disableMouseEvent: ->
     @.$.header.removeEventListener 'mousedown', @onMouseDown, true
     document.removeEventListener 'mousemove', @onMouseMove, true
     document.removeEventListener 'mouseup', @onMouseUp, true
+    document.removeEventListener 'keydown', @onKeyDown, true
 
   onMouseDown: (event) ->
     @mouseState = MouseState.PRESSED
@@ -119,3 +128,10 @@ Polymer 'pocket-4d',
 
     event.preventDefault()
     event.stopPropagation()
+
+  onKeyDown: (event) ->
+    if event.keyCode is 27
+      @close()
+
+      event.preventDefault()
+      event.stopPropagation()
