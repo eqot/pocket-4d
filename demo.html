@@ -16,10 +16,16 @@
 
       var button = document.querySelector('button');
       button.addEventListener('click', test1);
+
+      window.addEventListener('message', onMessageReceive);
     }
 
     function test1() {
       element.toggle();
+    }
+
+    function onMessageReceive(event) {
+      console.log(event.data);
     }
 
     window.onload = init;
