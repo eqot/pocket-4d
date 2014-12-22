@@ -15,11 +15,17 @@
       element = document.querySelector('pocket-4d');
 
       var button = document.querySelector('button');
-      button.addEventListener('click', test1);
+      button.addEventListener('click', openFeedback);
+
+      window.addEventListener('message', onMessageReceive);
     }
 
-    function test1() {
+    function openFeedback() {
       element.toggle();
+    }
+
+    function onMessageReceive(event) {
+      console.log(event.data);
     }
 
     window.onload = init;
@@ -30,12 +36,14 @@
 
   <p>An `pocket-4d` looks like this:</p>
 
-  <button>
-    Test 1
+  <button style="position: fixed; top: 0; right: 0; font-size: 16px">
+    Send feedback
   </button>
 
+  <div style="background-color: lightblue; height: 2000px"></div>
+
   <pocket-4d x="100" y="100" w="500" h="500">
-    <iframe src="http://localhost:3001/feedbacks/new?v=part" frameborder='0'></iframe>
+    <iframe src="http://localhost:3001/feedbacks/new?v=part&t=test" frameborder='0'></iframe>
   </pocket-4d>
 
 </body>
