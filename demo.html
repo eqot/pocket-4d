@@ -15,12 +15,12 @@
       element = document.querySelector('pocket-4d');
 
       var button = document.querySelector('button');
-      button.addEventListener('click', test1);
+      button.addEventListener('click', openFeedback);
 
       window.addEventListener('message', onMessageReceive);
     }
 
-    function test1() {
+    function openFeedback() {
       element.toggle();
     }
 
