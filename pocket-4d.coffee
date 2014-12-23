@@ -74,8 +74,11 @@ Polymer 'pocket-4d',
     @.$.dialog.style.height = height + 'px'
 
     if @child?
-      @child.style.width = (width - 2) + 'px'
-      @child.style.height = (height - 2) + 'px'
+      width = width - 2 if width > 0
+      height = height - 2 if height > 0
+
+      @child.style.width = width + 'px'
+      @child.style.height = height + 'px'
 
   enableMouseEvent: ->
     @.$.header.addEventListener 'mousedown', @onMouseDown, true
