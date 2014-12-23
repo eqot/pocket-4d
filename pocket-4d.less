@@ -15,6 +15,11 @@
   }
 }
 
+:host(:not(.open)) ::content > * {
+  transition: all 0s 0.5s;
+  opacity: 0;
+}
+
 #dialog {
   display: block;
 
