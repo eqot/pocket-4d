@@ -10,11 +10,13 @@ paths =
 
 gulp.task 'scripts', ->
   return gulp.src paths.scripts
+    .pipe $.plumber()
     .pipe $.coffee({bare: true})
     .pipe gulp.dest('.tmp/' + name)
 
 gulp.task 'styles', ->
   return gulp.src paths.styles
+    .pipe $.plumber()
     .pipe $.less()
     .pipe $.autoprefixer('last 1 version')
     .pipe gulp.dest('.tmp/' + name)
