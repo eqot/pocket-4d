@@ -134,7 +134,7 @@ Polymer 'pocket-4d',
 
   onKeyDown: (event) ->
     if event.keyCode is 27
-      @close()
+      window.postMessage 'close', '*'
 
       event.preventDefault()
       event.stopPropagation()
