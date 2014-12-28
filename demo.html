@@ -25,7 +25,9 @@
     }
 
     function onMessageReceive(event) {
-      console.log(event.data);
+      if (event.data === 'close') {
+        element.close();
+      }
     }
 
     window.onload = init;
