@@ -59,6 +59,12 @@ Polymer 'pocket-4d',
 
     @disableMouseEvent()
 
+  show: ->
+    @.classList.add 'open'
+
+  hide: ->
+    @.classList.remove 'open'
+
   toggle: ->
     if @state is State.CLOSED
       @open()
